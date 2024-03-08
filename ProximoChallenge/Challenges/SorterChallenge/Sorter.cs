@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Challenges
+namespace Challenges.SorterChallenge
 {
     public static class Sorter
     {
@@ -16,7 +16,7 @@ namespace Challenges
             //Populating the tuple
             foreach (var word in list)
             {
-                //Char sorting the words
+                //Char sorting the words and adding to the tuple list
                 var newWord = SortString(word);
                 tupleList.Add((word, newWord));
             }
@@ -35,8 +35,10 @@ namespace Challenges
         //Char sorting method
         private static string SortString(string word)
         {
-            char[] characters = word.ToArray();
-            Array.Sort(characters);
+            char[] characters = word.ToCharArray();
+
+            //In this step Upper case should be ignored to avoid turning "aBa" into "Baa" and ruining the next sort
+            Array.Sort(characters, (x, y) => char.ToLower(x).CompareTo(char.ToLower(y)));
             return new string(characters);
         }
     }
