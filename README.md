@@ -1,5 +1,5 @@
 # ProximoChallenge
-Sorter Challenge:
+Sorter Challenge: \
 Interesting problem to solve. The problem revolves around sorting strings individually and then sorting the group of strings.
 The first problem is that char[] sorting does not follow EOR, so one must transform the strings into a list of single-character strings, and then sort.
 Now you have a list of sorted strings that you need to sort and then put back into the original form. The way I solved this was by pairing the original form
@@ -8,7 +8,7 @@ in whatever order they land, that's the answer.
 
 After that, it's just a matter of creating unit tests, breaking the code, refactoring, repeat.
 
-Bob's Rental Challenge:
+Bob's Rental Challenge: \
 The first problem here was to find a way to "store" the table of prices. Understanding that that kind of information should come from a database
 I implemented a fake repository to deal with that. The table was stored as a dictionary<int, list<int>> and a method brings back whatever info is needed from the repository.
 The table could be crammed into the main class, but that would add extra responsibility to the class, so I preferred to keep it separated into a fake repository.
