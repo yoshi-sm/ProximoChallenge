@@ -32,14 +32,13 @@ namespace Challenges.SorterChallenge
             return returnList;
         }
 
-        //Char sorting method
+        //string sorting method
         private static string SortString(string word)
         {
-            char[] characters = word.ToCharArray();
-
-            //In this step Upper case should be ignored to avoid turning "aBa" into "Baa" and ruining the next sort
-            Array.Sort(characters, (x, y) => char.ToLower(x).CompareTo(char.ToLower(y)));
-            return new string(characters);
+            //The sorting has to be from a list of strings. An array[] does not follow EOR on char sorting
+            List<string> characters = word.Select(c => c.ToString()).ToList();
+            characters.Sort();
+            return string.Join("", characters);
         }
     }
 }

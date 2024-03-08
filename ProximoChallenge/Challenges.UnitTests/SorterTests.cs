@@ -77,10 +77,43 @@ namespace Challenges.UnitTests
 
 
         [Test]
-        public void Sort_DifferentAlphabets_ReturnAnswer()
+        public void Sort_EorLevelOneDifferentAlphabets_ReturnAnswer()
         {
-            var list = new List<string>() { "ϡ", "б", "þ", "α" };
-            var answer = new List<string>() { "þ", "α", "ϡ", "б" };
+            var list = new List<string>() { "ϡ", "б", "þ", "α", "d", "ð", "e", "z" };
+            var answer = new List<string>() { "d", "ð", "e", "z", "þ", "α", "ϡ", "б" };
+
+            var result = Sorter.Sort(list);
+
+            Assert.That(result, Is.EqualTo(answer));
+        }
+
+        [Test]
+        public void Sort_EorLevelTwoDiacriticsOrder_ReturnAnswer()
+        {
+            var list = new List<string>() { "bàa", "báa", "bãa", "bab", "baa", "báá"  };
+            var answer = new List<string>() { "baa", "báa", "bàa", "bãa", "báá", "bab" };
+
+            var result = Sorter.Sort(list);
+
+            Assert.That(result, Is.EqualTo(answer));
+        }
+
+        [Test]
+        public void Sort_EorLevelThreeUpperCaseDistinction_ReturnAnswer()
+        {
+            var list = new List<string>() { "PPP", "pPP", "pPp",  "ppp" };
+            var answer = new List<string>() { "ppp", "pPp", "pPP", "PPP" };
+
+            var result = Sorter.Sort(list);
+
+            Assert.That(result, Is.EqualTo(answer));
+        }
+
+        [Test]
+        public void Sort_EorLevelFourWhiteSpaceAndPunctuation_ReturnAnswer()
+        {
+            var list = new List<string>() { " a" , "  a", "its", "it's" };
+            var answer = new List<string>() { "  a", " a", "it's", "its" };
 
             var result = Sorter.Sort(list);
 
