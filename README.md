@@ -22,5 +22,5 @@ count the remaining days on the current month and calculate the price, then subt
 The tests were just bracket tests, month turns, and a few edge cases like leap year.
 
 
-Name: Yoshiyuki S Miranda
+Name: Yoshiyuki S Miranda \
 Email: yoshismiranda@gmail.com
