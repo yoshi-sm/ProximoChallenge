@@ -13,7 +13,7 @@ namespace Challenges.SorterChallenge
             List<string> returnList = new();
             List<(string, string)> tupleList = new();
 
-            //Populating the tuple
+            //Populating the tuple, for is a little bit faster, foreach is more readable
             foreach (var word in list)
             {
                 //Char sorting the words and adding to the tuple list
